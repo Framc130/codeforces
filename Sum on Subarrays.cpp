@@ -9,20 +9,18 @@ void solve(){
 
     int rimasti = k; 
     for(int i = 1; i <= n; i++){
-        int sum_p = prefix[i - 1]; 
-        int poss1 = i; 
-
         if(rimasti >= i){
-            rimasti -= i; 
-            
             if(i != 1) v[i] = v[i - 1];  
-            else v[i] = 2; 
+            else v[i] = 2;
+            
+            rimasti -= i;
             prefix[i] = prefix[i - 1] + v[i];
         } else if(rimasti == 0){
             v[i] = -1000;
         } else {
             v[i] = prefix[i - 1] - prefix[rimasti];
-            v[i] = -v[i] - 1;
+            v[i] = - v[i] - 1;
+            
             rimasti = 0;  
         }
     }
@@ -38,5 +36,4 @@ int32_t main(){
     while(t--){
         solve(); 
     }
-
 }

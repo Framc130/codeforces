@@ -7,12 +7,7 @@ void solve(){
 
     vector<int> p1, p2, v(n); 
     for(int &i: v) cin >> i; 
-
-    if(n == 1){
-        cout << 0 << "\n"; 
-        return; 
-    }
-
+    
     int ans = 0; 
     
     if(v[k - 1] > 0 && k != 1) ans = 1, v[k - 1] = - v[k - 1];

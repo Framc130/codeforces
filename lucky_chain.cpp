@@ -20,16 +20,15 @@ void solve(){
 
     int diff = y - x;
     
-    int diff1 = diff; 
     vector<int> fatt; 
     for(int i: primes){
-        if(diff1 == 1) break; 
-        if(diff1 % i != 0) continue; 
+        if(diff == 1) break; 
+        if(diff % i != 0) continue; 
 
-        while(diff1 % i == 0) diff1 /= i; 
+        while(diff % i == 0) diff /= i; 
         fatt.push_back(i); 
     }
-    if(diff1 != 1) fatt.push_back(diff1); 
+    if(diff != 1) fatt.push_back(diff); 
 
     int k = 1e9; 
     for(int i: fatt){
